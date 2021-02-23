@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IP info getter</title>
+</head>
+<body>
+	<p><h1>Pune aici un IP pentru a fi cautat</h1></p>
+	<p><input type="text" id="ip" name="ip"><button onclick="search_ip();">Cauta</button></p>
+	<p><h1>Pune aici un domeniu pentru a fi cautat</h1></p>
+	<p><input type="text" id="domeniu" name="domeniu"><button onclick="search_domeniu();">Cauta</button></p>
+	<p id="rezultat"></p>
+	<script type="text/javascript">
+		function do_query(req_data, data_type){
+			var url = new URL("http://localhost/query");
+			var params = {}
+			params[data_type] = req_data
+			url.search = new URLSearchParams(params).toString();
+			fetch(url).then(resp => {
+				resp.text().then(data =>{
+					var response = JSON.parse(data);
+					var result = document.createElement("p");
+					if(response.status){
+						result.innerHTML = "<h3>Rezultatul pentru "+req_data+" ( "+data_type+" ) : "+"<a href='"+response.data.file.url.full+"'>"+response.data.file.metadata.name+"</a></h3>";
+					}else{
+						result.innerHTML = "<h3>Rezultatul pentru "+req_data+" ( "+data_type+" ) nu a putut fi generat!</h3>";
+					}
+					document.getElementById('rezultat').appendChild(result);
+				})
+			});
+		}
+
+		function search_ip() {
+			var ip = document.getElementById('ip').value;
+			do_query(ip, "ip");
+		}
+
+		function search_domeniu() {
+			var domeniu = document.getElementById('domeniu').value;
+			do_query(domeniu, "domain");
+		}
+	</script>
+</body>
+</html>
