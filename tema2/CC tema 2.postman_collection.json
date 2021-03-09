@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "6d69169c-4e50-4089-a845-d10845eb1885",
+		"name": "CC tema 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "valid",
+			"item": [
+				{
+					"name": "add series",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Location",
+								"value": "/series/MrRobot",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"MrRobot\",\r\n    \"creator\": \"Sam Esmail\",\r\n    \"available_on\": \"amazon prime\",\r\n    \"imdb_rating\": 8.5,\r\n    \"imdb_id\": \"tt4158110\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add episode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Location",
+								"value": "/series/MrRobot/episodes/401Unauthorized",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"401Unauthorized\",\r\n    \"season\": 4,\r\n    \"runtime\": 60,\r\n    \"imdb_rating\": 9.4,\r\n    \"imdb_id\": \"tt7748418\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update series",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imdb_rating\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series/MrRobot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update episode",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imdb_rating\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes/401Unauthorized",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes",
+								"401Unauthorized"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series/MrRobot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes/401Unauthorized",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes",
+								"401Unauthorized"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete episode",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes/401Unauthorized",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes",
+								"401Unauthorized"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete series",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series/MrRobot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "invalid",
+			"item": [
+				{
+					"name": "try to add series",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Location",
+								"value": "/series/MrRobot",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"MrRobot\",\r\n    \"creator\": \"Sam Esmail\",\r\n    \"available_on\": \"amazon prime\",\r\n    \"imdb_rating\": 8.5,\r\n    \"imdb_id\": \"tt4158110\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series/MrRobot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try to add episode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Location",
+								"value": "/series/MrRobot/episodes/401Unauthorized",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"401Unauthorized\",\r\n    \"season\": 4,\r\n    \"runtime\": 60,\r\n    \"imdb_rating\": 9.4,\r\n    \"imdb_id\": \"tt7748418\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes/401Unauthorized",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes",
+								"401Unauthorized"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try to update series",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imdb_rating\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try to update episode",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imdb_rating\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try to delete all series",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try to delete all episodes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/series/MrRobot/episodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"series",
+								"MrRobot",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
